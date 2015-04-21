@@ -1,7 +1,6 @@
 <?php
 class MyDbManageClass
 {
-	
 	private $mUrl;
 	private $mUser;
 	private $mPass;
@@ -54,13 +53,13 @@ class MyDbManageClass
 		// free memory
 		if ($this->mResult != null)
 		{
-			mysql_free_result ( $this->mResult );
+			mysql_free_result($this->mResult);
 		}
 		
 		// disconnect
-		if ($this->mLink != null)
+		if ($this->mLink != null && is_bool($this->mResult) == false)
 		{
-			mysql_close ( $this->mLink ) or die ( "ERROR! disconnecting DB." );
+			mysql_close($this->mLink) or die("ERROR! disconnecting DB.");
 		}
 	}
 	
@@ -87,6 +86,5 @@ class MyDbManageClass
 		
 		return $max;
 	}
-	
 }
 ?>
