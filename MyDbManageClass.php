@@ -51,13 +51,13 @@ class MyDbManageClass
 	function disconnect()
 	{
 		// free memory
-		if ($this->mResult != null)
+		if ($this->mResult != null && is_bool($this->mResult) == false)
 		{
 			mysql_free_result($this->mResult);
 		}
 		
 		// disconnect
-		if ($this->mLink != null && is_bool($this->mResult) == false)
+		if ($this->mLink != null)
 		{
 			mysql_close($this->mLink) or die("ERROR! disconnecting DB.");
 		}
