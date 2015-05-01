@@ -12,7 +12,7 @@ $mOutput = "";
 
 if($f_sql != null)
 {
-	include_once dirname(__FILE__) . '/../mod/MyDbManageClass.php';
+	include_once dirname(__FILE__) . '/./MyDbManageClass.php';
 	$dbh = new MyDbManageClass();
 	$dbh->connect();
 	
