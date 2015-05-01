@@ -6,6 +6,17 @@ $SERVER_NAME = $_SERVER['SERVER_NAME'];
 //---------------------------------------------
 $f_sql = trim($_GET['sql']);
 $mSql = preg_replace("/[\r]?\n/", " ", $f_sql);
+/*
+select name from
+(
+ select * from tTest1
+ union select * from tTest2
+ union select * from tTest3
+)
+as tmp
+where slug='c'
+order by name DESC
+*/
 //---------------------------------------------
 $mLog = "";
 $mOutput = "";
